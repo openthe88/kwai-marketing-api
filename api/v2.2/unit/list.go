@@ -1,8 +1,8 @@
 package unit
 
 import (
-	"github.com/bububa/kwai-marketing-api/core"
-	"github.com/bububa/kwai-marketing-api/model/v2.2/unit"
+	"github.com/openthe88/kwai-marketing-api/core"
+	"github.com/openthe88/kwai-marketing-api/model/v2.2/unit"
 )
 
 // List 查询广告组

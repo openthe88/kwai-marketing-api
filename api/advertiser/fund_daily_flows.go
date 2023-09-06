@@ -1,8 +1,8 @@
 package advertiser
 
 import (
-	"github.com/bububa/kwai-marketing-api/core"
-	"github.com/bububa/kwai-marketing-api/model/advertiser"
+	"github.com/openthe88/kwai-marketing-api/core"
+	"github.com/openthe88/kwai-marketing-api/model/advertiser"
 )
 
 // FundDailyFlows 获取广告账户流水信息

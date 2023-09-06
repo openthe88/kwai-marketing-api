@@ -1,8 +1,8 @@
 package tool
 
 import (
-	"github.com/bububa/kwai-marketing-api/core"
-	"github.com/bububa/kwai-marketing-api/model/tool"
+	"github.com/openthe88/kwai-marketing-api/core"
+	"github.com/openthe88/kwai-marketing-api/model/tool"
 )
 
 // MAPI Quota 白盒化 https://developers.e.kuaishou.com/docs?docType=DSP&documentId=2244

@@ -3,7 +3,7 @@ package file
 import (
 	"strconv"
 
-	"github.com/bububa/kwai-marketing-api/model"
+	"github.com/openthe88/kwai-marketing-api/model"
 )
 
 // AdAppUpdateRequest 修改应用 API Request

@@ -9,8 +9,8 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/bububa/kwai-marketing-api/core"
-	"github.com/bububa/kwai-marketing-api/model/track"
+	"github.com/openthe88/kwai-marketing-api/core"
+	"github.com/openthe88/kwai-marketing-api/model/track"
 )
 
 // Activate 转化回传API

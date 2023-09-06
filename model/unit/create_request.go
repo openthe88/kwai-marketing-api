@@ -3,7 +3,7 @@ package unit
 import (
 	"encoding/json"
 
-	"github.com/bububa/kwai-marketing-api/model/target"
+	"github.com/openthe88/kwai-marketing-api/model/target"
 )
 
 // CreateRequest 创建广告组APIRequest

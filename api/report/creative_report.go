@@ -1,8 +1,8 @@
 package report
 
 import (
-	"github.com/bububa/kwai-marketing-api/core"
-	"github.com/bububa/kwai-marketing-api/model/report"
+	"github.com/openthe88/kwai-marketing-api/core"
+	"github.com/openthe88/kwai-marketing-api/model/report"
 )
 
 // CreativeReport 广告创意数据-自定义

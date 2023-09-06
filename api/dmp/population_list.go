@@ -1,8 +1,8 @@
 package dmp
 
 import (
-	"github.com/bububa/kwai-marketing-api/core"
-	"github.com/bububa/kwai-marketing-api/model/dmp"
+	"github.com/openthe88/kwai-marketing-api/core"
+	"github.com/openthe88/kwai-marketing-api/model/dmp"
 )
 
 // PopulationList 人群列表查询接口

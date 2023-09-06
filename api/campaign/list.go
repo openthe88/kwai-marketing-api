@@ -1,8 +1,8 @@
 package campaign
 
 import (
-	"github.com/bububa/kwai-marketing-api/core"
-	"github.com/bububa/kwai-marketing-api/model/campaign"
+	"github.com/openthe88/kwai-marketing-api/core"
+	"github.com/openthe88/kwai-marketing-api/model/campaign"
 )
 
 // List 获取广告计划信息

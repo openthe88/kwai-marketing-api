@@ -1,8 +1,8 @@
 package file
 
 import (
-	"github.com/bububa/kwai-marketing-api/core"
-	"github.com/bububa/kwai-marketing-api/model/file"
+	"github.com/openthe88/kwai-marketing-api/core"
+	"github.com/openthe88/kwai-marketing-api/model/file"
 )
 
 // AdVideoUploadV1 上传视频v1接口

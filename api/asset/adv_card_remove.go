@@ -1,8 +1,8 @@
 package asset
 
 import (
-	"github.com/bububa/kwai-marketing-api/core"
-	"github.com/bububa/kwai-marketing-api/model/asset"
+	"github.com/openthe88/kwai-marketing-api/core"
+	"github.com/openthe88/kwai-marketing-api/model/asset"
 )
 
 // AdvCardRemove 删除高级创意接口

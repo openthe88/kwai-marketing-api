@@ -1,8 +1,8 @@
 package unit
 
 import (
-	"github.com/bububa/kwai-marketing-api/core"
-	"github.com/bububa/kwai-marketing-api/model/tool/unit"
+	"github.com/openthe88/kwai-marketing-api/core"
+	"github.com/openthe88/kwai-marketing-api/model/tool/unit"
 )
 
 // BidPredict 获取广告组曝光、转化预估

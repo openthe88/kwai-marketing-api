@@ -1,8 +1,8 @@
 package tool
 
 import (
-	"github.com/bububa/kwai-marketing-api/core"
-	"github.com/bububa/kwai-marketing-api/model/tool"
+	"github.com/openthe88/kwai-marketing-api/core"
+	"github.com/openthe88/kwai-marketing-api/model/tool"
 )
 
 // KeyFrame 获取可选的推荐封面

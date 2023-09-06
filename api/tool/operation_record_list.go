@@ -1,8 +1,8 @@
 package tool
 
 import (
-	"github.com/bububa/kwai-marketing-api/core"
-	"github.com/bububa/kwai-marketing-api/model/tool"
+	"github.com/openthe88/kwai-marketing-api/core"
+	"github.com/openthe88/kwai-marketing-api/model/tool"
 )
 
 // OperationRecordList 账户操作记录信息查询

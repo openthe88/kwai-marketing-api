@@ -1,8 +1,8 @@
 package page
 
 import (
-	"github.com/bububa/kwai-marketing-api/core"
-	"github.com/bububa/kwai-marketing-api/model/page"
+	"github.com/openthe88/kwai-marketing-api/core"
+	"github.com/openthe88/kwai-marketing-api/model/page"
 )
 
 // List 获取魔力建站落地页组信息列表
