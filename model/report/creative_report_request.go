@@ -13,6 +13,8 @@ type CreativeReportRequest struct {
 	UnitIDs []uint64 `json:"unit_ids,omitempty"`
 	// CreativeIDs 广告创意ID集，过滤筛选条件，单次查询数量不超过5000
 	CreativeIDs []uint64 `json:"creative_ids,omitempty"`
+	//获取额外信息， "photo"获取视频信息，包含视频Id与视频md5
+	ExtendInfo []string `json:"extend_info,omitempty"`
 }
 
 // Url implement PostRequest interface
