@@ -1,5 +1,7 @@
 package report
 
+import "encoding/json"
+
 // Stat 数据报表
 type Stat struct {
 	// CampaignID 广告计划ID
@@ -15,7 +17,7 @@ type Stat struct {
 	// CreativeName 广告创意名称
 	CreativeName string `json:"creative_name,omitempty"`
 	// PhotoID 视频id
-	PhotoID string `json:"photo_id,omitempty"`
+	PhotoID json.Number `json:"photo_id,omitempty"`
 	// PhotoUrl 视频链接
 	PhotoUrl string `json:"photo_url,omitempty"`
 	// ImageToken 封面id
