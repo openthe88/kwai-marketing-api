@@ -5,9 +5,9 @@ import (
 	"github.com/openthe88/kwai-marketing-api/model/appcenter"
 )
 
-// AdAppList 获取应用列表
-func AdAppList(clt *core.SDKClient, accessToken string, req *appcenter.AdAppListRequest) (*appcenter.AdAppListResponse, error) {
-	var resp appcenter.AdAppListResponse
+// AdSubPkgCreate 创建应用分包
+func AdSubPkgCreate(clt *core.SDKClient, accessToken string, req *appcenter.AdSubPkgCreateRequest) (*appcenter.AdSubPkgCreateResponse, error) {
+	var resp appcenter.AdSubPkgCreateResponse
 	err := clt.Post(accessToken, req, &resp)
 	if err != nil {
 		return nil, err
