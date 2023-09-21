@@ -24,7 +24,7 @@ type AdAppReleaseListRequest struct {
 
 // Url implement GetRequest interface
 func (r AdAppReleaseListRequest) Url() string {
-	return "gw/dsp/appcenter/app/list"
+	return "gw/dsp/appcenter/app/release/list"
 }
 
 // Encode implement PostRequest interface
