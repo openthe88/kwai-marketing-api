@@ -1,8 +1,8 @@
 package subpkg
 
 import (
-	"github.com/bububa/kwai-marketing-api/core"
-	"github.com/bububa/kwai-marketing-api/model/v2.2/appcenter/subpkg"
+	"github.com/openthe88/kwai-marketing-api/core"
+	"github.com/openthe88/kwai-marketing-api/model/v2.2/appcenter/subpkg"
 )
 
 func Update(clt *core.SDKClient, accessToken string, req *subpkg.UpdateRequest) (*subpkg.UpdateResponse, error) {

@@ -1,8 +1,8 @@
 package target_v2
 
 import (
-	"github.com/bububa/kwai-marketing-api/core"
-	"github.com/bububa/kwai-marketing-api/model/target_v2"
+	"github.com/openthe88/kwai-marketing-api/core"
+	"github.com/openthe88/kwai-marketing-api/model/target_v2"
 )
 
 // TemplateList 查询定向模板接口

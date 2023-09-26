@@ -1,8 +1,8 @@
 package native
 
 import (
-	"github.com/bububa/kwai-marketing-api/core"
-	"github.com/bububa/kwai-marketing-api/model/native"
+	"github.com/openthe88/kwai-marketing-api/core"
+	"github.com/openthe88/kwai-marketing-api/model/native"
 )
 
 func PhotoList(clt *core.SDKClient, accessToken string, req *native.PhotoListRequest) (*native.PhotoListResponse, error) {

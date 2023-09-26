@@ -1,8 +1,8 @@
 package unit
 
 import (
-	"github.com/bububa/kwai-marketing-api/core"
-	"github.com/bububa/kwai-marketing-api/model/v2.2/unit"
+	"github.com/openthe88/kwai-marketing-api/core"
+	"github.com/openthe88/kwai-marketing-api/model/v2.2/unit"
 )
 
 func BidUpdate(clt *core.SDKClient, accessToken string, req *unit.BidUpdateRequest) ([]uint64, error) {
