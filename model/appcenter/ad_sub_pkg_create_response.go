@@ -2,6 +2,11 @@ package appcenter
 
 // AdSubPkgCreateResponse 新建应用分包 API Response
 type AdSubPkgCreateResponse struct {
+	// Data 返回Data数据
+	Data []SubPkg `json:"data"`
+}
+
+type SubPkg struct {
 	// ChannelId 渠道号(分包号)
 	ChannelId string `json:"channel_id,omitempty"`
 	// PackageId 应用包ID

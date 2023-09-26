@@ -5,7 +5,7 @@ import (
 	"github.com/openthe88/kwai-marketing-api/model/appcenter"
 )
 
-// AdAppReleaseList 获取应用列表
+// AdAppReleaseList 获取应用列表【单元创编】
 func AdAppReleaseList(clt *core.SDKClient, accessToken string, req *appcenter.AdAppReleaseListRequest) (*appcenter.AdAppReleaseListResponse, error) {
 	var resp appcenter.AdAppReleaseListResponse
 	err := clt.Post(accessToken, req, &resp)
