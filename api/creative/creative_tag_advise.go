@@ -6,11 +6,11 @@ import (
 )
 
 // CreativeTagAdvise 创意标签填写建议
-func CreativeTagAdvise(clt *core.SDKClient, accessToken string, req *creative.CreativeTagAdviseRequest) (*creative.CreativeTagAdviseResponse, error) {
-	var resp creative.CreativeTagAdviseResponse
+func CreativeTagAdvise(clt *core.SDKClient, accessToken string, req *creative.CreativeTagAdviseRequest) ([]*creative.CreativeTagAdviseResponse, error) {
+	var resp []*creative.CreativeTagAdviseResponse
 	err := clt.Post(accessToken, req, &resp)
 	if err != nil {
 		return nil, err
 	}
-	return &resp, nil
+	return resp, nil
 }

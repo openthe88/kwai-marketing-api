@@ -1,9 +1,6 @@
 package tool
 
-import (
-	"net/url"
-	"strconv"
-)
+import "encoding/json"
 
 // ConvertListRequest 获取可用的转化目标 API Request
 type ConvertListRequest struct {
@@ -23,8 +20,8 @@ func (r ConvertListRequest) Url() string {
 }
 
 // Encode implement GetRequest interface
-func (r ConvertListRequest) Encode() string {
-	values := &url.Values{}
+func (r ConvertListRequest) Encode() []byte {
+	/*values := &url.Values{}
 	values.Set("advertiser_id", strconv.FormatUint(r.AdvertiserID, 10))
 	values.Set("type", strconv.Itoa(r.Type))
 	if r.Page > 0 {
@@ -33,5 +30,8 @@ func (r ConvertListRequest) Encode() string {
 	if r.PageSize > 0 {
 		values.Set("page_size", strconv.Itoa(r.PageSize))
 	}
-	return values.Encode()
+	return values.Encode()*/
+
+	ret, _ := json.Marshal(r)
+	return ret
 }
