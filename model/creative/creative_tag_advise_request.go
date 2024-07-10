@@ -1,8 +1,7 @@
 package creative
 
 import (
-	"net/url"
-	"strconv"
+	"encoding/json"
 )
 
 // CreativeTagAdviseRequest 创意标签填写建议 API Request
@@ -17,8 +16,11 @@ func (r CreativeTagAdviseRequest) Url() string {
 }
 
 // Encode implement GetRequest interface
-func (r CreativeTagAdviseRequest) Encode() string {
-	values := &url.Values{}
+func (r CreativeTagAdviseRequest) Encode() []byte {
+	/*values := &url.Values{}
 	values.Set("advertiser_id", strconv.FormatUint(r.AdvertiserID, 10))
-	return values.Encode()
+	return values.Encode()*/
+
+	ret, _ := json.Marshal(r)
+	return ret
 }
