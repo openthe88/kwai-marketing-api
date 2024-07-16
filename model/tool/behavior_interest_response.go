@@ -15,40 +15,40 @@ type BehaviorInterest struct {
 
 type Interest struct {
 	// ID 兴趣类目的ID
-	ID uint64 `json:"id,omitempty"`
+	ID uint64 `json:"id"`
 
 	// Name 兴趣类目的名称
-	Name string `json:"name,omitempty"`
+	Name string `json:"name"`
 
 	// Level 类目所在的层数
-	Level int `json:"level,omitempty"`
+	Level int `json:"level"`
 
 	// Des 类目的介绍
-	Des string `json:"des,omitempty"`
+	Des string `json:"des"`
 
 	// Children 当前类目的子类目，父类目与子类目结构相同
-	Children []Interest `json:"children,omitempty"`
+	Children []Interest `json:"children"`
 
 	// Count 当前类目的人群预估数量
-	Count uint64 `json:"count,omitempty"`
+	Count uint64 `json:"count"`
 }
 
 type Behavior struct {
 	// ID 行为类目的ID
-	ID uint64 `json:"id,omitempty"`
+	ID uint64 `json:"id"`
 
 	// Name 行为类目的名称
-	Name string `json:"name,omitempty"`
+	Name string `json:"name"`
 
 	// Level 类目所在的层数
-	Level int `json:"level,omitempty"`
+	Level int `json:"level"`
 
 	// Des 类目的介绍
-	Des string `json:"des,omitempty"`
+	Des string `json:"des"`
 
 	// Children 当前类目的子类目，父类目与子类目结构相同
-	Children []Behavior `json:"children,omitempty"`
+	Children []Behavior `json:"children"`
 
 	// Count 当前类目的人群预估数量
-	Count uint64 `json:"count,omitempty"`
+	Count uint64 `json:"count"`
 }

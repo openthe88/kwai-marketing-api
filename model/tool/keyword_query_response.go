@@ -8,11 +8,11 @@ type KeywordQueryResponse struct {
 
 type Keyword struct {
 	// ID 关键词ID
-	ID uint64 `json:"id,omitempty"`
+	ID uint64 `json:"id"`
 
 	// Name 关键词名称
-	Name string `json:"name,omitempty"`
+	Name string `json:"name"`
 
 	// Count 当前关键词的人群预估数量
-	Count uint64 `json:"count,omitempty"`
+	Count uint64 `json:"count"`
 }

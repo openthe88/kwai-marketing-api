@@ -91,5 +91,5 @@ type PopulationSystem struct {
 	CanTarget int `json:"can_target"`
 
 	// SrcType 人群包来源，0：DMP平台（磁力万象）；1：MAPI平台；2：CDP平台（磁力方舟）；3：CDP投放共建类型
-	SrcType int `json:"src_type,omitempty"`
+	SrcType int `json:"src_type"`
 }
