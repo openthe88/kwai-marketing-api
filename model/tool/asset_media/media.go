@@ -47,26 +47,26 @@ type RelateUnitsItem struct {
 
 type MediaRes struct {
 	// MediaID 媒体包ID
-	MediaID uint64 `json:"media_id,omitempty"`
+	MediaID uint64 `json:"mediaId,omitempty"`
 
 	// Name 媒体包名字
 	Name string `json:"name,omitempty"`
 
-	// AdvertiserID 广告主ID
-	AdvertiserID uint64 `json:"advertiser_id,omitempty"`
+	// AccountId 广告主ID
+	AccountId uint64 `json:"accountId,omitempty"`
 
 	// SourceType 媒体包来源，0-不限，未指定，1-行业优质流量包，2-广告主自定义，默认 0
-	SourceType int `json:"source_type,omitempty"`
+	SourceType int `json:"sourceType,omitempty"`
 
 	// PosIDs 广告位列表，修改媒体包广告位
-	PosIDs []string `json:"pos_ids,omitempty"`
+	PosIDs []string `json:"posIds,omitempty"`
 
 	// Status 状态，删除媒体包，0-下线，1-上线，默认 1
 	Status int `json:"status,omitempty"`
 
 	// CreateTime 创建时间，时间戳
-	CreateTime int64 `json:"create_time,omitempty"`
+	CreateTime int64 `json:"createTime,omitempty"`
 
 	// UpdateTime 更新时间，时间戳
-	UpdateTime int64 `json:"update_time,omitempty"`
+	UpdateTime int64 `json:"updateTime,omitempty"`
 }
