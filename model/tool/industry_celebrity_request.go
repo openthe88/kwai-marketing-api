@@ -1,8 +1,7 @@
 package tool
 
 import (
-	"net/url"
-	"strconv"
+	"encoding/json"
 )
 
 // IndustryCelebrityRequest 快手网红-网红分类
@@ -15,8 +14,7 @@ func (r IndustryCelebrityRequest) Url() string {
 	return "gw/dsp/v1/industry/celebrity"
 }
 
-func (r IndustryCelebrityRequest) Encode() string {
-	values := &url.Values{}
-	values.Set("advertiser_id", strconv.FormatUint(r.AdvertiserID, 10))
-	return values.Encode()
+func (r IndustryCelebrityRequest) Encode() []byte {
+	ret, _ := json.Marshal(r)
+	return ret
 }

@@ -111,6 +111,24 @@ func (c *SDKClient) Get(accessToken string, req model.GetRequest, resp interface
 	return nil
 }
 
+func (c *SDKClient) GetBody(accessToken string, req model.PostRequest, resp interface{}) error {
+	var reqResp model.BaseResponse
+	err := c.getBody(accessToken, c.PostUrl(req), req.Encode(), &reqResp)
+	if err != nil {
+		return err
+	}
+	if reqResp.IsError() {
+		return reqResp
+	}
+	if resp != nil {
+		err = json.Unmarshal(reqResp.Data, resp)
+		if err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
 // GetBytes get bytes api
 func (c *SDKClient) GetBytes(accessToken string, req model.GetRequest) ([]byte, error) {
 	reqUrl := c.GetUrl(req)
@@ -240,6 +258,29 @@ func (c *SDKClient) post(accessToken string, reqUrl string, reqBytes []byte, res
 func (c *SDKClient) get(accessToken string, reqUrl string, resp interface{}) error {
 	debug.PrintGetRequest(reqUrl, c.debug)
 	httpReq, err := http.NewRequest("GET", reqUrl, nil)
+	if err != nil {
+		return err
+	}
+	if accessToken != "" {
+		httpReq.Header.Add("Access-Token", accessToken)
+	}
+	httpReq.Header.Add("Content-Type", "application/json")
+	httpResp, err := c.client.Do(httpReq)
+	if err != nil {
+		return err
+	}
+	defer httpResp.Body.Close()
+	err = debug.DecodeJSONHttpResponse(httpResp.Body, resp, c.debug)
+	if err != nil {
+		debug.PrintError(err, c.debug)
+		return err
+	}
+	return nil
+}
+
+func (c *SDKClient) getBody(accessToken string, reqUrl string, reqBody []byte, resp interface{}) error {
+	debug.PrintGetRequest(reqUrl, c.debug)
+	httpReq, err := http.NewRequest("GET", reqUrl, bytes.NewBuffer(reqBody))
 	if err != nil {
 		return err
 	}
