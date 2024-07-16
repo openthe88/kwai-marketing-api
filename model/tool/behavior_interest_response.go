@@ -3,7 +3,7 @@ package tool
 // BehaviorInterestResponse 获取行为与兴趣"类目"
 type BehaviorInterestResponse struct {
 	//BehaviorInterest 行为兴趣类目,详情见下方
-	BehaviorInterest BehaviorInterest `json:"behaviorInterest"`
+	BehaviorInterest BehaviorInterest `json:"behavior_interest"`
 }
 
 type BehaviorInterest struct {
