@@ -1,8 +1,7 @@
 package tool
 
 import (
-	"net/url"
-	"strconv"
+	"encoding/json"
 )
 
 // TargetingTagsListRequest 获取可选的定向标签
@@ -19,9 +18,7 @@ func (r TargetingTagsListRequest) Url() string {
 }
 
 // Encode implement GetRequest interface
-func (r TargetingTagsListRequest) Encode() string {
-	values := &url.Values{}
-	values.Set("advertiser_id", strconv.FormatUint(r.AdvertiserID, 10))
-	values.Set("type", r.Type)
-	return values.Encode()
+func (r TargetingTagsListRequest) Encode() []byte {
+	ret, _ := json.Marshal(r)
+	return ret
 }

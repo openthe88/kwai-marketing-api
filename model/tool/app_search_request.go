@@ -1,8 +1,7 @@
 package tool
 
 import (
-	"net/url"
-	"strconv"
+	"encoding/json"
 )
 
 // AppSearchRequest 获取可选的应用定向 API Request
@@ -19,9 +18,7 @@ func (r AppSearchRequest) Url() string {
 }
 
 // Encode implement GetRequest interface
-func (r AppSearchRequest) Encode() string {
-	values := &url.Values{}
-	values.Set("advertiser_id", strconv.FormatUint(r.AdvertiserID, 10))
-	values.Set("app_name", r.AppName)
-	return values.Encode()
+func (r AppSearchRequest) Encode() []byte {
+	ret, _ := json.Marshal(r)
+	return ret
 }

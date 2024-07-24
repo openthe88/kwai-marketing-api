@@ -8,7 +8,7 @@ import (
 // ActionBarTextList 获取行动号召按钮
 func ActionBarTextList(clt *core.SDKClient, accessToken string, req *creative.ActionBarTextListRequest) ([]string, error) {
 	var resp creative.ActionBarTextListResponse
-	err := clt.Get(accessToken, req, &resp)
+	err := clt.GetBody(accessToken, req, &resp)
 	if err != nil {
 		return nil, err
 	}

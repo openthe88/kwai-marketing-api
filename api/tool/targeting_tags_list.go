@@ -6,9 +6,9 @@ import (
 )
 
 // TargetingTagsList 获取可选的定向标签
-func TargetingTagsList(clt *core.SDKClient, accessToken string, req *tool.TargetingTagsListRequest) (*tool.TargetingTag, error) {
-	var resp tool.TargetingTag
-	err := clt.Get(accessToken, req, &resp)
+func TargetingTagsList(clt *core.SDKClient, accessToken string, req *tool.TargetingTagsListRequest) (*tool.TargetingTagsListResponse, error) {
+	var resp tool.TargetingTagsListResponse
+	err := clt.GetBody(accessToken, req, &resp)
 	if err != nil {
 		return nil, err
 	}

@@ -8,6 +8,8 @@ type AdvCardListRequest struct {
 	AdvertiserID uint64 `json:"advertiser_id,omitempty"`
 	// CardType 卡片类型; 100:图片卡片 101:多利益卡-图文 102：多利益卡-多标签 103：电商促销样式
 	CardType int `json:"card_type,omitempty"`
+	//StyleType 1=普通卡片，2=推广位
+	StyleType int `json:"style_type,omitempty"`
 	// Page 查询的页码数
 	Page int `json:"page,omitempty"`
 	// PageSize 单页行数
