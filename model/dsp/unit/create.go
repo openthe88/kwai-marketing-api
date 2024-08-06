@@ -58,7 +58,7 @@ type CreateRequest struct {
 	DayBudget int64 `json:"day_budget,omitempty"`
 	// DayBudgetSchedule 分日预算
 	// 单位：厘，指定 0 表示预算不限，默认为 0；每天不小于 100 元，不超过 100000000 元，仅支持输入数字；修改预算不得低于该计划当日花费的 120% 和修改前预算的较小者，与 day_budget 不能同时传，均不能低于该计划下任一广告组出价，优先级高于day_budget
-	DayBudgetSchedule int64 `json:"day_budget_schedule,omitempty"`
+	DayBudgetSchedule []int64 `json:"day_budget_schedule,omitempty"`
 	// ConvertID 转化目标 ID
 	// 可通接口【/rest/openapi/v1/tool/convert/list】获得，不同计划类型需要对应各自的转化目标类型：提升应用安装(campaign_type=2) - 安卓：convert_type:3、7 / IOS：convert_type:7；推广品牌活动(campaign_type=4) / 收集销售线索(campaign_type=5)：convert_type:1、2 收集销售线索营销目标下，建站落地页程序化落地页不支持convertId，自有落地页仅支持convert_type=1的场景
 	ConvertID int `json:"convert_id,omitempty"`
