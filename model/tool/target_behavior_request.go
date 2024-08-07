@@ -9,7 +9,7 @@ type TargetBehaviorRequest struct {
 }
 
 func (r TargetBehaviorRequest) Url() string {
-	return "/gw/dsp/target/option/behavior_interest"
+	return "gw/dsp/target/option/behavior_interest"
 }
 
 func (r TargetBehaviorRequest) Encode() []byte {
