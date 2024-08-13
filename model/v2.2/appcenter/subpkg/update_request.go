@@ -5,9 +5,8 @@ import "encoding/json"
 type UpdateRequest struct {
 	AdvertiserId int64   `json:"advertiser_id,omitempty"`
 	PackageId    []int64 `json:"package_id,omitempty"`
-	PutStatus    int     `json:"put_status,omitempty"`
+	PutStatus    int     `json:"put_status"`
 }
-
 
 func (r UpdateRequest) Url() string {
 	return "gw/dsp/appcenter/subpkg/mod"
