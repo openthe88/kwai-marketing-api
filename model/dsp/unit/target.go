@@ -68,6 +68,8 @@ type Target struct {
 	// BehaviorInterest 行为兴趣定向
 	// behavior.keyword 、behavior.label、interest.lable 其中一个必传，具体传值下方表格；仅在 behavior_type = 1 时生效。联盟广告位不支持interest。
 	BehaviorInterest *BehaviorInterest `json:"behavior_interest,omitempty"`
+	//行为兴趣（升级版）
+	BehaviorInterestParamShow *BehaviorInterestParamShow `json:"behavior_interest_param_show,omitempty"`
 	// DisableInstaledAppSwitch 过滤已安装人群维度
 	// 0：过滤（默认），1：不限
 	DisableInstalledAppSwitch *int `json:"disable_installed_app_switch,omitempty"`
@@ -173,4 +175,21 @@ type Keyword struct {
 	// Name 关键词名称
 	// id 与 name 需互相匹配
 	Name string `json:"name,omitempty"`
+}
+
+type BehaviorInterestParamShow struct {
+	// KeywordIDs 行为定向关键词，选填 根据/rest/openapi/v1/tool/keyword/query 接口获取
+	KeywordIDs []int `json:"keywordIds"`
+
+	// CategoryIDs 行为定向类目词，选填 根据/rest/openapi/gw/dsp/target/option/behavior_interest 接口获取。将行为类目 id 从最高层类目 id 开始，以“-”连接起来，假如有一个类目 id 为 80202，父类目 id 为 802，最高层类目 id 为 8，则此时应该写"8-802-80202"；如果想全选最高层类目"8"底下的所有子类目，填"8"
+	CategoryIDs []string `json:"category_ids"`
+
+	// CustomBehavior 自定义行为意向，必填 0：关闭；1：开启
+	CustomBehavior int `json:"custom_behavior"`
+
+	// SceneTypes 行为场景，选填 1：视屏；2：APP；4：广告；custom_behaivor为1时必填，不能为空列表
+	SceneTypes []int `json:"scene_types"`
+
+	// TimeType 时间范围，选填 0:7 天；1：15 天；2：30 天；3：90 天；4：180 天；5：60天；custom_behaivor为1时必填，不能null
+	TimeType int `json:"time_type"`
 }
