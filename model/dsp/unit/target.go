@@ -179,7 +179,7 @@ type Keyword struct {
 
 type BehaviorInterestParamShow struct {
 	// KeywordIDs 行为定向关键词，选填 根据/rest/openapi/v1/tool/keyword/query 接口获取
-	KeywordIDs []int `json:"keywordIds"`
+	KeywordIDs []int `json:"keyword_ids"`
 
 	// CategoryIDs 行为定向类目词，选填 根据/rest/openapi/gw/dsp/target/option/behavior_interest 接口获取。将行为类目 id 从最高层类目 id 开始，以“-”连接起来，假如有一个类目 id 为 80202，父类目 id 为 802，最高层类目 id 为 8，则此时应该写"8-802-80202"；如果想全选最高层类目"8"底下的所有子类目，填"8"
 	CategoryIDs []string `json:"category_ids"`
