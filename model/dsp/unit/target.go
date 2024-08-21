@@ -16,7 +16,7 @@ type Target struct {
 	Age *Age `json:"age,omitempty"`
 	// AgeRange 固定年龄段
 	// 与 age 不能同时传；【18：表示 18-23 岁】；【24：表示 24-30 岁】；【31：表示 31-40 岁】；【41：表示 41-49 岁】；【50：表示 50-100 岁】
-	AgeRange []int `json:"age_range,omitempty"`
+	AgesRange []int `json:"ages_range,omitempty"`
 	// Gender 性别
 	// 1：女性, 2：男性，0 表示不限
 	Gender *int `json:"gender,omitempty"`
@@ -61,7 +61,7 @@ type Target struct {
 	SeedPopulation []uint64 `json:"seed_population,omitempty"`
 	// InteliExtendOption 智能定向开关
 	// 0：智能定向关闭；1：智能定向开启；2：智能定向Pro开启（白名单可用）；和auto_population字段互斥，只能有一个字段开启
-	InteliExtendOption int `json:"inteli_extend_option"`
+	IntelliExtendOption int `json:"intelli_extend_option"`
 	// BehaviorType 	行为兴趣类型
 	// 0：不限；1：自定义行为意向；2：行为意向系统优选，联盟广告位不支持。当target定向字段不为null时，此字段必填，无默认值。
 	BehaviorType *int `json:"behavior_type,omitempty"`
