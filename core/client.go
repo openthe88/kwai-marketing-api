@@ -92,6 +92,29 @@ func (c *SDKClient) Post(accessToken string, req model.PostRequest, resp interfa
 	return nil
 }
 
+func (c *SDKClient) OauthPost(accessToken string, req model.PostRequest) (resp []byte, err error) {
+	debug.PrintPostJSONRequest(c.PostUrl(req), req.Encode(), c.debug)
+	httpReq, err := http.NewRequest("POST", c.PostUrl(req), bytes.NewReader(req.Encode()))
+	if err != nil {
+		return nil, err
+	}
+	if accessToken != "" {
+		httpReq.Header.Add("Access-Token", accessToken)
+	}
+	httpReq.Header.Add("Content-Type", "application/json")
+	httpResp, err := c.client.Do(httpReq)
+	if err != nil {
+		return nil, err
+	}
+	defer httpResp.Body.Close()
+	err = debug.DecodeJSONHttpResponse(httpResp.Body, &resp, c.debug)
+	if err != nil {
+		debug.PrintError(err, c.debug)
+		return nil, err
+	}
+	return
+}
+
 // Get execute get api request
 func (c *SDKClient) Get(accessToken string, req model.GetRequest, resp interface{}) error {
 	var reqResp model.BaseResponse
