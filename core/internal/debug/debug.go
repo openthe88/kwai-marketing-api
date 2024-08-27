@@ -84,9 +84,6 @@ func DecodeJSONHttpResponse(r io.Reader, v interface{}, debug bool) error {
 }
 
 func DecodeJSONHttpOauthResponse(r io.Reader, v interface{}, debug bool) error {
-	if !debug {
-		return json.NewDecoder(r).Decode(v)
-	}
 	body, err := io.ReadAll(r)
 	if err != nil {
 		return err
