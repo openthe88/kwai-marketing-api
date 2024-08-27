@@ -3,6 +3,7 @@ package debug
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"io"
 	"log"
 )
@@ -80,4 +81,28 @@ func DecodeJSONHttpResponse(r io.Reader, v interface{}, debug bool) error {
 	log.Printf("[DEBUG] [API] http response body:\n%s\n", body2)
 
 	return json.Unmarshal(body, v)
+}
+
+func DecodeJSONHttpOauthResponse(r io.Reader, v interface{}, debug bool) error {
+	if !debug {
+		return json.NewDecoder(r).Decode(v)
+	}
+	body, err := io.ReadAll(r)
+	if err != nil {
+		return err
+	}
+
+	body2 := body
+	buf := bytes.NewBuffer(make([]byte, 0, len(body2)+1024))
+	if err := json.Indent(buf, body2, "", "    "); err == nil {
+		body2 = buf.Bytes()
+	}
+	log.Printf("[DEBUG] [API] http response body:\n%s\n", body2)
+
+	if byteSlice, ok := v.(*[]byte); ok {
+		*byteSlice = body
+		return nil
+	}
+
+	return fmt.Errorf("v must be of type *[]byte")
 }

@@ -107,7 +107,7 @@ func (c *SDKClient) OauthPost(accessToken string, req model.PostRequest) (resp [
 		return nil, err
 	}
 	defer httpResp.Body.Close()
-	err = debug.DecodeJSONHttpResponse(httpResp.Body, &resp, c.debug)
+	err = debug.DecodeJSONHttpOauthResponse(httpResp.Body, &resp, c.debug)
 	if err != nil {
 		debug.PrintError(err, c.debug)
 		return nil, err
