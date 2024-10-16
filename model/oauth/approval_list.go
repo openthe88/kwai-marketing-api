@@ -31,4 +31,6 @@ func (r ApprovalListRequest) Encode() []byte {
 type ApprovalListResponse struct {
 	// Details 查询获得的广告主 ID
 	Details []uint64 `json:"details,omitempty"`
+	// 本次查询对应分页是否大于总页数，true-当前分页大于总分页，无需继续向后查询；false-当前分页小于等于总页数，需要查询。
+	IsEnd bool `json:"isEnd,omitempty"`
 }
