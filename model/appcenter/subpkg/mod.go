@@ -10,7 +10,7 @@ type ModRequest struct {
 	PackageID []uint64 `json:"package_id,omitempty"`
 	// PutStatus 操作分包的类型： 0-更新分包， 1-恢复分包， 2-删除分包
 	// 当分包状态处于构建中或更新中时，不可对分包进行操作。更新分包指将分包升级到绑定最新发布版本的母包；删除分包将不能使用该分包创建广告；恢复分包可重新使用分包物料创建广告。
-	PutStatus int `json:"put_status,omitempty"`
+	PutStatus int `json:"put_status"`
 }
 
 // Url implement PostRequest interface
