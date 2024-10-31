@@ -2,6 +2,7 @@ package core
 
 import (
 	"bytes"
+	"context"
 	"encoding/json"
 	"fmt"
 	"io"
@@ -65,7 +66,7 @@ func (c *SDKClient) UploadUrl(req model.UploadRequest) string {
 }
 
 // Post execute post api request
-func (c *SDKClient) Post(accessToken string, req model.PostRequest, resp interface{}) error {
+func (c *SDKClient) Post(ctx context.Context, accessToken string, req model.PostRequest, resp interface{}) error {
 	var reqResp model.Response
 	if v, ok := resp.(model.Response); ok {
 		reqResp = v
@@ -116,7 +117,7 @@ func (c *SDKClient) OauthPost(accessToken string, req model.PostRequest) (resp [
 }
 
 // Get execute get api request
-func (c *SDKClient) Get(accessToken string, req model.GetRequest, resp interface{}) error {
+func (c *SDKClient) Get(ctx context.Context, accessToken string, req model.GetRequest, resp interface{}) error {
 	var reqResp model.BaseResponse
 	err := c.get(accessToken, c.GetUrl(req), &reqResp)
 	if err != nil {
@@ -153,7 +154,7 @@ func (c *SDKClient) GetBody(accessToken string, req model.PostRequest, resp inte
 }
 
 // GetBytes get bytes api
-func (c *SDKClient) GetBytes(accessToken string, req model.GetRequest) ([]byte, error) {
+func (c *SDKClient) GetBytes(ctx context.Context, accessToken string, req model.GetRequest) ([]byte, error) {
 	reqUrl := c.GetUrl(req)
 	debug.PrintGetRequest(reqUrl, c.debug)
 	httpReq, err := http.NewRequest("GET", reqUrl, nil)
@@ -171,7 +172,7 @@ func (c *SDKClient) GetBytes(accessToken string, req model.GetRequest) ([]byte, 
 	return io.ReadAll(httpResp.Body)
 }
 
-func (c *SDKClient) GetOnBody(accessToken string, req model.PostRequest, resp interface{}) error {
+func (c *SDKClient) GetOnBody(ctx context.Context, accessToken string, req model.PostRequest, resp interface{}) error {
 	var reqResp model.BaseResponse
 	err := c.getOnBody(accessToken, c.PostUrl(req), req.Encode(), &reqResp)
 	if err != nil {
@@ -190,7 +191,7 @@ func (c *SDKClient) GetOnBody(accessToken string, req model.PostRequest, resp in
 }
 
 // Upload multipart/form-data post
-func (c *SDKClient) Upload(accessToken string, req model.UploadRequest, resp interface{}) error {
+func (c *SDKClient) Upload(ctx context.Context, accessToken string, req model.UploadRequest, resp interface{}) error {
 	var buf bytes.Buffer
 	mw := multipart.NewWriter(&buf)
 	params := req.Encode()
