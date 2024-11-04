@@ -73,12 +73,12 @@ type LimitingReason struct {
 	ReasonAndModify []ReasonAndModify `json:"reason_and_modify,omitempty"`
 }
 
-// AdvCreativeCommunityReviewDetail 商业审核拒绝详情
+// AdvCreativeCommunityReviewDetail 程序化创意社区审核拒绝详情
 type AdvCreativeCommunityReviewDetail struct {
 	// 创意ID
 	ID int64 `json:"id,omitempty"`
 	// 视频ID
-	VideoID int64 `json:"photo_id,omitempty"`
+	PhotoID int64 `json:"photo_id,omitempty"`
 	// 封面ID
 	CoverID int64 `json:"cover_id,omitempty"`
 	// 封面URL
@@ -89,7 +89,7 @@ type AdvCreativeCommunityReviewDetail struct {
 	CommunityReviewDetail string `json:"community_review_detail,omitempty"`
 }
 
-// CustomCreativeCommunityReviewDetail 商业审核拒绝详情
+// CustomCreativeCommunityReviewDetail 自定义创意社区审核拒绝详情
 type CustomCreativeCommunityReviewDetail struct {
 	// 创意ID
 	ID int64 `json:"id,omitempty"`
