@@ -36,7 +36,7 @@ type ElementReviewDetailsResponse struct {
 	//程序化创意社区审核拒绝详情
 	AdvCreativeCommunityReviewDetail []AdvCreativeCommunityReviewDetail `json:"adv_creative_community_review_detail,omitempty"`
 	//自定义创意社区审核拒绝详情
-	CustomCreativeCommunityReviewDetail []CustomCreativeCommunityReviewDetail `json:"custom_creative_community_review_detail,omitempty"`
+	CustomCreativeCommunityReviewDetail *CustomCreativeCommunityReviewDetail `json:"custom_creative_community_review_detail,omitempty"`
 	//程序化创意组id，自定义创意创意id
 	ID int64 `json:"id,omitempty"`
 }
