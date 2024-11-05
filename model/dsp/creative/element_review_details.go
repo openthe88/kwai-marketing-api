@@ -44,7 +44,7 @@ type ElementReviewDetailsResponse struct {
 // ReviewReason 商业审核拒绝详情
 type ReviewReason struct {
 	//视频ID或者创意ID
-	ID int `json:"id,omitempty"`
+	ID string `json:"id,omitempty"`
 	//审核元素 1视频 2封面 3广告语 4图片 6创意 7图集
 	Type int `json:"type,omitempty"`
 	//限流类型 1低质 2降级 3负向 4封面没过
@@ -64,7 +64,7 @@ type ReasonAndModify struct {
 // LimitingReason 限流详情
 type LimitingReason struct {
 	//视频ID或者创意ID
-	ID int `json:"id,omitempty"`
+	ID string `json:"id,omitempty"`
 	//审核元素 1视频 2封面 3广告语 4图片 6创意 7图集
 	Type int `json:"type,omitempty"`
 	//限流类型 1低质 2降级 3负向 4封面没过
@@ -78,7 +78,7 @@ type AdvCreativeCommunityReviewDetail struct {
 	// 创意ID
 	ID int64 `json:"id,omitempty"`
 	// 视频ID
-	PhotoID int64 `json:"photo_id,omitempty"`
+	PhotoID string `json:"photo_id,omitempty"`
 	// 封面ID
 	CoverID int64 `json:"cover_id,omitempty"`
 	// 封面URL
@@ -94,7 +94,7 @@ type CustomCreativeCommunityReviewDetail struct {
 	// 创意ID
 	ID int64 `json:"id,omitempty"`
 	// 视频ID
-	PhotoID int64 `json:"photo_id,omitempty"`
+	PhotoID string `json:"photo_id,omitempty"`
 	// 封面ID
 	CoverID int64 `json:"cover_id,omitempty"`
 	// 封面URL
