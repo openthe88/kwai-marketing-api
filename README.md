@@ -47,6 +47,7 @@
       - 查询程序化创意 [ AdvancedCreativeList(ctx context.Context, clt *core.SDKClient, accessToken string, req *creative.AdvancedCreativeListRequest) (*creative.AdvancedCreativeListResponse, error) ]
       - 修改创意状态 [ UpdateStatus(ctx context.Context, clt *core.SDKClient, accessToken string, req *creative.UpdateStatusRequest) ([]uint64, error) ]
       - 创意体验 [ Preview(ctx context.Context, clt *core.SDKClient, accessToken string, req *creative.PreviewRequest) error ]
+      - 获取创意审核详情 [ ElementReviewDetails(ctx context.Context, clt *core.SDKClient, accessToken string, req *creative.ElementReviewDetailsRequest) ([]creative.ElementReviewDetailsResponse, error) ]
   - 获取各层级信息
     - 获取广告计划信息 [ campaign.List(ctx context.Context, clt *core.SDKClient, accessToken string, req *campaign.ListRequest) (*campaign.ListResponse, error) ]
     - 获取广告组信息 [ unit.List(ctx context.Context, clt *core.SDKClient, accessToken string, req *unit.ListRequest) (*unit.ListResponse, error) ]
@@ -218,6 +219,14 @@
     - 修改应用分包备注 [ subpkg.Description(ctx context.Context, clt *core.SDKClient, accessToken string, req *subpkg.DescriptionRequest) error ]
     - 获取分包管理/回收站列表 [ subpkg.List(ctx context.Context, clt *core.SDKClient, accessToken string, req *subpkg.ListRequest) (*subpkg.ListResponse, error) ]
     - 分包失败重新构建 [ app.RetryBuildSubPackage(ctx context.Context, clt *core.SDKClient, accessToken string, req *app.RetryBuildSubPackageRequest) (int, error) ]
+  - 应用共享
+    - 添加应用共享 [ share.Add(ctx context.Context, clt *core.SDKClient, accessToken string, req *share.AddRequest) (share.AddResponse, error) ]
+    - 取消应用共享 [ share.Cancel(ctx context.Context, clt *core.SDKClient, accessToken string, req *share.CancelRequest) (share.CancelResponse, error) ]
+    - 获取应用已共享账号列表 [ app.ShareList(ctx context.Context, clt *core.SDKClient, accessToken string, req *app.ShareListRequest) (*app.ShareListResponse, error) ]
+    - 获取应用已共享主体列表 [ app.ShareCorpList(ctx context.Context, clt *core.SDKClient, accessToken string, req *app.ShareCorpListRequest) (*app.ShareCorpListResponse, error) ]
+    - 获取单个主体下共享账号列表 [ app.ShareListCorpAccount(ctx context.Context, clt *core.SDKClient, accessToken string, req *app.ShareListCorpAccountRequest) (*app.ShareListCorpAccountResponse, error) ]
+    - 获取可共享的账号列表 [ app.CanShareAccountList(ctx context.Context, clt *core.SDKClient, accessToken string, req *app.CanShareAccountListRequest) (*app.CanShareAccountListResponse, error) ]
+    - 获取可共享的主体列表 [ app.CanShareCorpList(ctx context.Context, clt *core.SDKClient, accessToken string, req *app.CanShareCorpListRequest) (*app.CanShareCorpListResponse, error) ]
 - 商品库 (api/dsp/dpa)
   - 查询 DPA 模板信息 [ TemplateList(ctx context.Context, clt *core.SDKClient, accessToken string, req *dpa.TemplateListRequest) (*dpa.TemplateListResponse, error) ]
   - 获取商品库类目树 [ CategoryList(ctx context.Context, clt *core.SDKClient, accessToken string, req *dpa.CategoryListRequest) (*dpa.CategoryListResponse, error) ]
