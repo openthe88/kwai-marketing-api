@@ -7,7 +7,7 @@ import (
 
 type DetailedReportRequest struct {
 	AdvertiserID uint64          `json:"advertiser_id"`          // 广告主ID
-	SearchParam  SearchParam     `json:"search_param,omitempty"` // 查询参数
+	SearchParam  *SearchParam    `json:"search_param,omitempty"` // 查询参数
 	PageInfo     *model.PageInfo `json:"page_info,omitempty"`    // 分页信息
 }
 
@@ -29,9 +29,9 @@ func (r DetailedReportRequest) Encode() []byte {
 }
 
 type DetailedReportResponse struct {
-	ResultList []*AdDspNativeReportViewSnake `json:"result_list"` // 报表明细
-	Sum        []*AdDspNativeReportViewSnake `json:"sum"`         // 全局汇总
-	PageInfo   *model.PageInfo               `json:"page_info"`   // 分页信息
+	ResultList []AdDspNativeReportViewSnake `json:"result_list"` // 报表明细
+	Sum        []AdDspNativeReportViewSnake `json:"sum"`         // 全局汇总
+	PageInfo   *model.PageInfo              `json:"page_info"`   // 分页信息
 }
 
 // AdDspNativeReportViewSnake 定义广告数据结构体
