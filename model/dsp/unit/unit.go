@@ -240,6 +240,8 @@ type Unit struct {
 	// UnitMaterialType 广告标的物类型
 	// campaignType = 19（快手小程序/小游戏推广）时（释义同mini_app_type字段）表示：1：快手小程序；2：快手小游戏；campaignType = 32（微信小程序/小游戏推广）时表示：3：微信小程序；4：微信小游戏
 	UnitMaterialType int `json:"unit_material_type,omitempty"`
+	//series_pay_template_id_multi 短剧付费模版列表 最多不超过5个
+	SeriesPayTemplateIdMulti []int64 `json:"series_pay_template_id_multi,omitempty"`
 }
 
 // DpaUnitParam DPA 相关商品信息

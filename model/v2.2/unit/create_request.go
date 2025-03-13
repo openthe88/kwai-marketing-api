@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 )
 
-// CreateRequest 创建广告组APIRequest
+// CreateRequest 创建广告组APIRequest @todo 有疑问是否废弃不用? lihd
 type CreateRequest struct {
 	//advertiser_id	long	必填	广告主 ID	在获取 access_token 的时候返回
 	AdvertiserID uint64 `json:"advertiser_id,omitempty"`
