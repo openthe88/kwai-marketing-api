@@ -5,7 +5,7 @@ import "encoding/json"
 // UserListRequest 获取授权的短剧作者列表
 type UserListRequest struct {
 	// AdvertiserID 广告主ID
-	AdvertiserID uint64 `json:"advertiser_id,omitempty"`
+	AdvertiserID int64 `json:"advertiser_id,omitempty"`
 }
 
 func (r UserListRequest) Url() string {
