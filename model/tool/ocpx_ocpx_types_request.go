@@ -33,6 +33,9 @@ type OcpxOcpxTypesRequest struct {
 
 	// UnitMaterialType 小程序单元组件类型，按需传入，1=快手小程序、2=快手小游戏、3=微信小程序、4=微信小游戏
 	UnitMaterialType int `json:"unit_material_type"`
+
+	// SeriesPayMode 仅在计划 campaignType=30快手号-短剧推广时，需要跟付费模板一起使用，1-打包，2-虚拟币，3-观看广告解锁
+	SeriesPayMode int `json:"series_pay_mode"`
 }
 
 func (r OcpxOcpxTypesRequest) Url() string {
