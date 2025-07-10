@@ -52,6 +52,9 @@ type Video struct {
 	NativeGoodInfo int `json:"native_good_info,omitempty"`
 	// AdPhotoValuateInfo 视频素材评价信息
 	AdPhotoValuateInfo *PhotoValuateInfo `json:"adPhotoValuateInfo,omitempty"`
+	// NativeGoodType 素材质量
+	// 1-良好，2-优质，0,3-其他
+	NativeGoodType int `json:"native_good_type,omitempty"`
 }
 
 // PhotoValuateInfo 视频素材评价信息
